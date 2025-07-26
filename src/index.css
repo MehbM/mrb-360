@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+body {
+  overflow-y: scroll;
+}
+.partners-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.partners-track {
+  display: flex;
+  animation: scroll-marquee 15s linear infinite;
+}
+
+.partner-card {
+  min-width: 120px;
+  height: 100px;
+  margin-right: 2.5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease-in-out;
+  flex-shrink: 0; /* ✅ Important to prevent shrinking */
+}
+
+.partner-card img {
+  max-height: 48px;
+  object-fit: contain;
+  width: auto;
+  margin: auto;
+}
+/* Keyframe updated for seamless loop */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
